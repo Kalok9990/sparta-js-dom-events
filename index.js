@@ -31,5 +31,26 @@ document.addEventListener("DOMContentLoaded", function(){
       console.log(this.value + " was clicked.");
     })
   }
+
+  //Bubbling and Catching (use of third param: true)
+  var div1 = document.getElementById('div1');
+  var div2 = document.getElementById('div2');
+  var div3 = document.getElementById('div3');
+
+  div1.addEventListener("click", function(event){
+    //stops bubbling
+    event.stopPropagation();
+    console.log("div1 was clicked");
+  });
+
+  div2.addEventListener("click", function(event){
+    event.stopPropagation();
+    console.log("div2 was clicked");
+  });
+
+  div3.addEventListener("click", function(event){
+    event.stopPropagation();
+    console.log("div3 was clicked");
+  });
 //reminder end of parameters
 })
